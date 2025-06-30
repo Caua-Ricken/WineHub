@@ -335,12 +335,14 @@ body{
     }
 
     .line_itens{
-        scroll-margin-top: 41rem;
+        scroll-margin-top: 38rem;
     }
 
-   .content {
-      margin: 5rem 1rem 10rem 1rem;
+    .content {
+      margin-left: auto;
       text-align: center;
+      scroll-margin-top: 32rem;
+      margin-top: 15rem;
   }
 
   .content h2 {
