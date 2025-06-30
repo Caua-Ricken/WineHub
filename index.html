@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./imagens/168570.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,26 +37,27 @@
         </div>
      </section>
 
-     <input list="categorias" id="filtro-input" placeholder="Escolha um tipo de uva">
-  <datalist id="categorias">
-    <option value="merlot">
-    <option value="malbec">
-    <option value="carbernet sauvignon">
-  </datalist>
-<!--
-  <div class="produtos">
-    <div class="produto" data-categoria="Bebidas">Refrigerante</div>
-    <div class="produto" data-categoria="Comidas">Pizza</div>
-    <div class="produto" data-categoria="Doces">Chocolate</div>
-    <div class="produto" data-categoria="Bebidas">Suco</div>
-    <div class="produto" data-categoria="Comidas">Hambúrguer</div>
-    <div class="produto" data-categoria="Doces">Bolo</div>
-  </div>-->
+     <div class="categoria">
+      <input list="categorias" id="filtro-input" placeholder="Escolha uma categoria">
+       <datalist id="categorias">
+        <option value="merlot"></option>
+        <option value="malbec"></option>
+        <option value="carbernet sauvignon"></option>
+        <option value="trajadura"></option>
+        <option value="sauvignon blanc"></option>
+        <option value="rose"></option>
+        <option value="outros"></option>
+      </datalist>
 
-     
-     <section class="line_itens">
+      <a href="carrinho.html" target="_blank" class="carrinho-link">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="contador-carrinho">0</span>
+      </a>
+     </div>
+   
+     <section class="line_itens" id="produtos">
 
-      <div class="produtos">
+      <div class="produtos" data-categoria="malbec">
         <img src="./produtos_img/Vinho-Chileno-Concha-Y-Toro-Reservado-Malbec.png" alt="">
 
         <div class="text">
@@ -74,7 +76,7 @@
         </div>
       </div>
 
-      <div class="produtos">
+      <div class="produtos" data-categoria="carbernet sauvignon">
         <img src="./produtos_img/Vinho-Chileno-Casillero-del-Diablo-.png" alt="">
 
         <div class="text">
@@ -93,7 +95,7 @@
         </div>
       </div>
 
-         <div class="produtos">
+         <div class="produtos" data-categoria="trajadura">
         <img src="./produtos_img/Vinho-Verde-Faisao-em-garrafa-cantil.png" alt="">
 
         <div class="text">
@@ -112,7 +114,7 @@
         </div>
       </div>
 
-         <div class="produtos">
+         <div class="produtos" data-categoria="merlot">
         <img src="./produtos_img/aurora merlot.png" alt="">
 
         <div class="text">
@@ -131,16 +133,16 @@
         </div>
       </div>
 
-          <div class="produtos">
-        <img src="./produtos_img/aurora merlot.png" alt="">
+          <div class="produtos" data-categoria="carbernet sauvignon">
+        <img src="./produtos_img/reservado rose.png" alt="">
 
         <div class="text">
-          <div>vinho aurora</div>
+          <div>vinho reservado rose</div>
           <div>tipo: seco</div>
-          <div>Uva: merlot</div>
+          <div>Uva: carbernet sauvignon</div>
           <div class="value">
-            R$<span class="value_r">35</span>
-            <span class="value_c">,97</span></div>
+            R$<span class="value_r">51</span>
+            <span class="value_c">,99</span></div>
         </div>
 
         <div class="quantidade">
@@ -150,15 +152,146 @@
         </div>
       </div>
 
+        <div class="produtos" data-categoria="carbernet sauvignon">
+        <img src="./produtos_img/82-CabernetSauvignon-GatoNegro.png" alt="">
 
-      
-      
+        <div class="text">
+          <div>vinho gato negro</div>
+          <div>tipo: seco</div>
+          <div>Uva: carbernet sauvignon</div>
+          <div class="value">
+            R$<span class="value_r">42</span>
+            <span class="value_c">,90</span></div>
+        </div>
 
+        <div class="quantidade">
+          <button onclick="alterarQtd(this,-1)">-</button>
+          <input type="text" value="0" readonly>
+          <button onclick="alterarQtd(this,1)">+</button>
+        </div>
+      </div>
+
+        <div class="produtos" data-categoria="sauvignon blanc">
+        <img src="./produtos_img/Vinho-Gato-Negro-Sauv-Blanc.png" alt="">
+
+        <div class="text">
+          <div>vinho gato negro</div>
+          <div>tipo: seco</div>
+          <div>Uva: sauvignon blanc</div>
+          <div class="value">
+            R$<span class="value_r">42</span>
+            <span class="value_c">,90</span></div>
+        </div>
+
+        <div class="quantidade">
+          <button onclick="alterarQtd(this,-1)">-</button>
+          <input type="text" value="0" readonly>
+          <button onclick="alterarQtd(this,1)">+</button>
+        </div>
+      </div>
+
+         <div class="produtos" data-categoria="rose">
+        <img src="./produtos_img/Vinho-Rose-Portugues-Faisao.png" alt="">
+
+        <div class="text">
+          <div>vinho faisao rose</div>
+          <div>tipo: seco</div>
+          <div>Uva: carbernet sauvignon</div>
+          <div class="value">
+            R$<span class="value_r">68</span>
+            <span class="value_c">,90</span></div>
+        </div>
+
+        <div class="quantidade">
+          <button onclick="alterarQtd(this,-1)">-</button>
+          <input type="text" value="0" readonly>
+          <button onclick="alterarQtd(this,1)">+</button>
+        </div>
+      </div>
+
+         <div class="produtos" data-categoria="outros">
+        <img src="./produtos_img/abridor_de_vinho_metalico_saca_rolha_com_alavanca_2_em_1.webp" alt="">
+
+        <div class="text">
+          <div>abridor de vinhos</div>
+          <div>tipo: #</div>
+          <div>Uva: #</div>
+          <div class="value">
+            R$<span class="value_r">32</span>
+            <span class="value_c">,41</span></div>
+        </div>
+
+        <div class="quantidade">
+          <button onclick="alterarQtd(this,-1)">-</button>
+          <input type="text" value="0" readonly>
+          <button onclick="alterarQtd(this,1)">+</button>
+        </div>
+      </div>
+
+         <div class="produtos" data-categoria="outros">
+        <img src="./produtos_img/saca rolhas.webp" alt="">
+
+        <div class="text">
+          <div>saca rolhas simples</div>
+          <div>tipo: #</div>
+          <div>Uva: #</div>
+          <div class="value">
+            R$<span class="value_r">11</span>
+            <span class="value_c">,99</span></div>
+        </div>
+
+        <div class="quantidade">
+          <button onclick="alterarQtd(this,-1)">-</button>
+          <input type="text" value="0" readonly>
+          <button onclick="alterarQtd(this,1)">+</button>
+        </div>
+      </div>
+
+         <div class="produtos" data-categoria="outros">
+        <img src="./produtos_img/taca-vinho.jpg" alt="">
+
+        <div class="text">
+          <div>taça vinho comum</div>
+          <div>tipo: #</div>
+          <div>Uva: #</div>
+          <div class="value">
+            R$<span class="value_r">8</span>
+            <span class="value_c">,90</span></div>
+        </div>
+
+        <div class="quantidade">
+          <button onclick="alterarQtd(this,-1)">-</button>
+          <input type="text" value="0" readonly>
+          <button onclick="alterarQtd(this,1)">+</button>
+        </div>
+      </div>
+
+         <div class="produtos" data-categoria="outros">
+        <img src="./produtos_img/taca baixa.png" alt="">
+
+        <div class="text">
+          <div>taça de vidro baixa</div>
+          <div>tipo: #</div>
+          <div>Uva: #</div>
+          <div class="value">
+            R$<span class="value_r">5</span>
+            <span class="value_c">,49</span></div>
+        </div>
+
+        <div class="quantidade">
+          <button onclick="alterarQtd(this,-1)">-</button>
+          <input type="text" value="0" readonly>
+          <button onclick="alterarQtd(this,1)">+</button>
+        </div>
+      </div>
 
      </section>
 
-     <p>kkkk
-     </p>
+     <footer>
+      <div></div>
+     </footer>
+
+    
 
      <script src="index.js"></script>
     
