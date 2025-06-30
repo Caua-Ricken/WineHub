@@ -91,17 +91,20 @@ body{
     margin-bottom: 17rem;
     margin-left: auto;
     scroll-margin-top: 23rem;
-}
-.content p{
-    width: 40ch;
-    font-size: 3rem;
     text-align: center;
+    text-transform: uppercase;
 }
 .content h2{
     font-size: 6rem;
-    font-family: "Cinzel Decorative";
     font-weight: 200;
     text-align: center;
+}
+.content h3{
+    font-size: 16rem;
+    color: rgb(64, 64, 143);
+}
+.content p{
+    font-size: 4.5rem;
 }
 
 
@@ -113,7 +116,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    scroll-margin-top: 8rem;
+    scroll-margin-top: 20rem;
    
 }
 .produtos{
@@ -291,23 +294,30 @@ body{
         padding: 4rem 2rem;
         gap: 3rem;
     }
-
-    .content{
-        scroll-margin-top: 32rem;
-    }
-
-    .content h2 {
-        font-size: 4rem;
-    }
-
-    .content p {
-        font-size: 2.2rem;
-        width: 100%;
-        padding: 0 1rem;
-    }
+    
     .line_itens{
         scroll-margin-top: 41rem;
     }
+     .content {
+      margin-left: auto;
+      text-align: center;
+      scroll-margin-top: 32rem;
+      margin-top: 15rem;
+  }
+
+  .content h2 {
+      font-size: 3rem;
+  }
+
+  .content h3 {
+      font-size: 6rem;
+      color: rgb(64, 64, 143);
+  }
+
+  .content p {
+      font-size: 2.2rem;
+      padding: 0 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -324,13 +334,28 @@ body{
         padding: 0.8rem 1.5rem;
     }
 
-    .content h2 {
-        font-size: 3.2rem;
+    .line_itens{
+        scroll-margin-top: 41rem;
     }
 
-    .content p {
-        font-size: 2rem;
-    }
+   .content {
+      margin: 5rem 1rem 10rem 1rem;
+      text-align: center;
+  }
+
+  .content h2 {
+      font-size: 3rem;
+  }
+
+  .content h3 {
+      font-size: 6rem;
+      color: rgb(64, 64, 143);
+  }
+
+  .content p {
+      font-size: 2.2rem;
+      padding: 0 1rem;
+  }
 }
 
 .produtos img{
