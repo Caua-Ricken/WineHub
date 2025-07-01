@@ -427,35 +427,44 @@ body{
         scroll-margin-top: 38rem;
     }
 
-  .content {
-      margin-left: auto;
-      text-align: center;
-      scroll-margin-top: 32rem;
-      margin-top: 15rem;
-  }
+    .content {
+        margin-left: auto;
+        text-align: center;
+        scroll-margin-top: 32rem;
+        margin-top: 15rem;
+    }
 
-  .content h2 {
-      font-size: 3rem;
-  }
+    .content h2 {
+        font-size: 3rem;
+    }
 
-  .content h3 {
-      font-size: 6rem;
-      color: rgb(64, 64, 143);
-  }
+    .content h3 {
+        font-size: 6rem;
+        color: rgb(64, 64, 143);
+    }
 
-  .content p {
-      font-size: 2.2rem;
-      padding: 0 1rem;
-  }
-  .dev img {
-    width: 16rem;
-  }
-  .dev_name {
-    font-size: 2.5rem;
-  }
-  .dev_cat {
-    font-size: 1.6rem;
-  }
+    .content p {
+        font-size: 2.2rem;
+        padding: 0 1rem;
+    }
+
+    .dev img {
+        width: 16rem;
+    }
+
+    .dev_name {
+       font-size: 2.5rem;
+    }
+
+    .dev_cat {
+       font-size: 1.6rem;
+    }
+
+    .membros {
+       flex-direction: column;
+       align-items: center;
+       gap: 5rem;
+    }
 }
 
 .produtos img{
