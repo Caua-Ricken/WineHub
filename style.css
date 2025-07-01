@@ -430,7 +430,7 @@ body{
     .content {
         margin-left: auto;
         text-align: center;
-        scroll-margin-top: 32rem;
+        scroll-margin-top: 26rem;
         margin-top: 15rem;
     }
 
@@ -464,6 +464,7 @@ body{
        flex-direction: column;
        align-items: center;
        gap: 5rem;
+       scroll-margin-top: 10rem;
     }
 }
 
