@@ -6,23 +6,23 @@ function alterarQtd(botao, valor){
         input.value = atual;
       }
  
-document.getElementById("filtro-input").addEventListener("input", function () {
-    const filtro = this.value.trim().toLowerCase(); // remove espaços e minúsculas
-    const produtos = document.querySelectorAll(".produtos");
+document.getElementById("filtro-select").addEventListener("change", function () {
+  const filtro = this.value.trim().toLowerCase();
+  const produtos = document.querySelectorAll(".produtos");
 
-    produtos.forEach(produto => {
-        const categoria = (produto.getAttribute("data-categoria") || "").toLowerCase(); // garante string
+  produtos.forEach(produto => {
+    const categoria = (produto.getAttribute("data-categoria") || "").toLowerCase();
 
-        if (!filtro) {
-            // filtro vazio: mostrar todos os produtos
-            produto.style.display = "flex";
-        } else if (categoria.includes(filtro)) {
-            produto.style.display = "flex";
-        } else {
-            produto.style.display = "none";
-        }
-    });
+    if (!filtro || filtro === "") {
+      produto.style.display = "flex";
+    } else if (categoria.includes(filtro)) {
+      produto.style.display = "flex";
+    } else {
+      produto.style.display = "none";
+    }
+  });
 });
+
 
 function alterarQtd(botao, valor) {
   const input = botao.parentElement.querySelector("input");
