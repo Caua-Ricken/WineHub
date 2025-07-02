@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./imagens/168570.png">
+    <link rel="stylesheet" href="carrinho.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Indie+Flower&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>compras</title>
+
+</head>
+<body>
+
+     <header class="center">
+        <div class="title">
+          <img src="./imagens/vinho_fundo.png" alt="">
+        </div>
+     </header> 
+
+   <div class="container">
+     <h1>Meu Carrinho</h1>
+   </div>
+
+   <div class="buttons">
+     <button class="clean" onclick="localStorage.removeItem('carrinho'); location.reload();">
+        Limpar Carrinho
+     </button>
+     <a class="back" href="index.html">voltar a comprar</a>
+   </div>
+   
+   <div class="user">
+    <h2 class="checkout">preencha seus dados</h2>
+    <input type="text" placeholder="insira seu nome">
+    <div class="number">
+      <input type="text" placeholder="insira sua cidade">
+      <input type="number" placeholder="Nº">
+    </div>
+    <input type="email" placeholder="insira seu email">
+   </div>
+
+
+
+   
+
+
+    <script src="carrinho.js"></script>
+</body>
+</html>
