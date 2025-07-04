@@ -21,3 +21,31 @@ document.addEventListener("DOMContentLoaded", () => {
     container.innerHTML += itemHTML;
   });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const radios = document.querySelectorAll('input[name="pay"]');
+  const cardPay = document.getElementById('card-pay');
+  const pixDiv = document.querySelector('.pix');
+
+  function togglePaymentFields() {
+    const selected = document.querySelector('input[name="pay"]:checked').value;
+
+    if (selected === 'cartao') {
+      cardPay.classList.remove('hidden');
+      pixDiv.classList.add('hidden');
+    } else if (selected === 'pix') {
+      pixDiv.classList.remove('hidden');
+      cardPay.classList.add('hidden');
+    }
+  }
+
+  // Inicializa a exibição correta ao carregar
+  togglePaymentFields();
+
+  // Adiciona o evento de mudança para todos os radios
+  radios.forEach(radio => {
+    radio.addEventListener('change', togglePaymentFields);
+  });
+});

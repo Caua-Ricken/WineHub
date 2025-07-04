@@ -31,17 +31,107 @@
      </button>
      <a class="back" href="index.html">voltar a comprar</a>
    </div>
-   
-   <div class="user">
-    <h2 class="checkout">preencha seus dados</h2>
-    <input type="text" placeholder="insira seu nome">
-    <div class="number">
-      <input type="text" placeholder="insira sua cidade">
-      <input type="number" placeholder="Nº">
+    
+
+  <form class="user-form">
+  <fieldset class="user">
+    <legend class="checkout">preencha seus dados</legend>
+
+    <div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="insira seu nome" required>
     </div>
-    <input type="email" placeholder="insira seu email">
+
+
+    <div class="number">
+      <div>
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" placeholder="insira sua cidade" required>
+      </div>
+      <div>
+        <label for="numero">Nº:</label>
+        <input type="number" id="numero" name="numero" placeholder="Nº" required>
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="insira seu email" required>
+    </div>
+
+    <input type="submit" class="comfirm" value="confirmar">
+  </fieldset>
+</form>
+
+
+<form action="" method="post" class="user-form">
+  <fieldset class="pay">
+    <legend class="checkout">metodo de pagamento</legend>
+
+    <div class="pay_input">
+    <label>
+      <input type="radio" name="pay" value="cartao" checked>cartão
+    </label>
+    <label>
+      <input type="radio" name="pay" value="pix" checked>pix
+    </label>
+    </div>
+  </fieldset>
+
+   <div class="pix">
+
+    <div class="pix_box">
+
+    <div>
+    <label for="pix">chave pix</label>
+    <input type="text" placeholder="82.779.737/0001-19" readonly>
+    </div>
+
+    <input type="submit" value="confirmar" class="comfirm">
+    </div>
    </div>
 
+
+   <div id="card-pay" class="hidden">
+
+    <div class="card_pay">
+     
+    <div>
+    <label for="number">Número do cartão:</label>
+    <input type="text" id="numero" name="card-number">
+    </div>  
+
+    <div>
+    <label for="name">nome</label>
+    <input type="text" id="name" name="card-name">
+    </div>  
+
+    <div>  
+    <label for="cvc">cvc</label>
+    <input type="number" id="cvc" name="card-cvc" maxlength="3">
+    </div>  
+
+    <label for="parcelas">Parcelamento:</label>
+    <select id="parcelas" name="parcelas" class="parcelas">
+     <option value="1x">1x sem juros</option>
+     <option value="2x">2x sem juros</option>
+     <option value="3x">3x sem juros</option>
+     <option value="4x">4x sem juros</option>
+     <option value="5x">5x sem juros</option>
+     <option value="6x">6x sem juros</option>
+     <option value="7x">7x sem juros</option>
+     <option value="8x">8x sem juros</option>
+     <option value="9x">9x sem juros</option>
+     <option value="10x">10x sem juros</option>
+     <option value="11x">11x sem juros</option>
+     <option value="12x">12x sem juros</option>
+    </select>
+
+    <input type="submit" value="confirmar" class="comfirm">
+    </div>
+  </div>
+
+</form>
 
 
    
