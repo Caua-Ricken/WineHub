@@ -102,3 +102,18 @@ function salvarCarrinho() {
 
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  carrinho.forEach(item => {
+    const produtos = document.querySelectorAll(".produtos");
+    produtos.forEach(produto => {
+      const nomeProduto = produto.querySelector(".text div").textContent.trim().toLowerCase();
+      if (nomeProduto === item.nome.trim().toLowerCase()) {
+        produto.querySelector(".quantidade input").value = item.quantidade;
+      }
+    });
+  });
+  atualizarCarrinhoTotal();
+});
+

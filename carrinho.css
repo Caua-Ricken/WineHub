@@ -286,3 +286,25 @@ body{
     width: 100%;
 }
 
+.forms{
+    display: flex;
+    width: 60%;
+    margin: auto;
+}
+
+.end{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+    padding: 1.6rem;
+    background-color: #444;
+    font-size: 3rem;
+    color: white;
+}
+.media{
+    gap: 2rem;
+    display: flex;
+}
+.media a{
+    color: white;
+}

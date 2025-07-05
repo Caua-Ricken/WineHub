@@ -41,11 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Inicializa a exibição correta ao carregar
   togglePaymentFields();
 
-  // Adiciona o evento de mudança para todos os radios
   radios.forEach(radio => {
     radio.addEventListener('change', togglePaymentFields);
   });
 });
+
