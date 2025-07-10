@@ -1,43 +1,40 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
-body{
+body {
     background: #ccc;
 }
 
-
-
-/*header*/
-.center{
+/* Header */
+.center {
     background-color: rgb(238, 238, 238);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.1rem 5rem;
     flex-wrap: wrap;
-
     position: sticky;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
 }
-.center img{
+
+.center img {
     width: 11rem;
     height: 11rem;
 }
 
-
-
-/* produtos*/
-.container{
+/* Products */
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,13 +46,16 @@ body{
     width: 70%;
     border: 2px solid black;
 }
-.container h1{
+
+.container h1 {
     font-size: 3.5rem;
 }
-.text{
+
+.text {
     font-size: 3rem;
 }
-.card_item{
+
+.card_item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,38 +66,42 @@ body{
     padding: 1.5rem 0;
     line-height: 2.7rem;
 }
-.card_item img{
+
+.card_item img {
     width: 13rem;
     height: 13rem;
     border-radius: 1rem;
 }
-.name_itens{
+
+.name_itens {
     flex-grow: 1;
 }
-.name_itens h2{
+
+.name_itens h2 {
     font-size: 2.7rem;
     text-transform: capitalize;
 }
-.name_itens p{
+
+.name_itens p {
     font-size: 2rem;
 }
-.value{
-     font-size: 2.3rem;
-     font-weight: bold;
-     color: #4d0202;
+
+.value {
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #4d0202;
 }
 
-
-
-/*botões*/
-.buttons{
+/* Buttons */
+.buttons {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
     gap: 2rem;
     align-items: center;
 }
-.clean , .back{
+
+.clean, .back {
     font-size: 2rem;
     padding: 1rem 3rem;
     border: none;
@@ -112,57 +116,64 @@ body{
     transition: 0.6s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-.clean:hover , .back:hover{
+
+.clean:hover, .back:hover {
     background-color: #7f0c0c;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-
-/*usuario*/
-.user-form{
+/* User Form */
+.user-form {
     border: 2px solid black;
-    margin: 10rem auto ;
+    margin: 5rem auto;
     width: 32rem;
     padding: 1rem;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-.user{
+
+.user {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
     width: 100%;
-    margin:auto;
+    margin: auto;
     padding: 1.5rem;
     border-style: none;
 }
-.checkout{
+
+.checkout {
     font-size: 3rem;
     text-align: center;
     text-transform: capitalize;
 }
-.user label{
+
+.user label {
     font-size: 2rem;
     font-weight: 600;
     font-family: sans-serif;
     margin-right: auto;
 }
+
 .user > div {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.number{
+
+.number {
     display: flex;
     gap: 1rem;
 }
-.number input{
+
+.number input {
     width: 100%;
     box-sizing: border-box;
 }
-.user input{
+
+.user input {
     width: 100%;
     padding: 1rem 2rem;
     border-radius: 5px;
@@ -172,24 +183,25 @@ body{
     box-sizing: border-box;
     color: black;
 }
-.user .comfirm{
+
+.user .comfirm {
     background-color: #aa0404;
     color: white;
     font-weight: bold;
     transition: 0.3s ease-in-out;
 }
-.user .comfirm:hover{
+
+.user .comfirm:hover {
     background-color: #4d0202;
 }
 
-
-
-/*pagamento*/
-.pay{
+/* Payment */
+.pay {
     width: 100%;
     border-style: none;
 }
-.pay_input{
+
+.pay_input {
     justify-content: space-evenly;
     display: flex;
     margin-top: 1rem;
@@ -197,21 +209,22 @@ body{
     text-transform: uppercase;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.card_pay{
+.card_pay, .pix_box, .boleto {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
     width: 100%;
-    margin:auto;
+    margin: auto;
     padding: 1.5rem;
     border-style: none;
 }
-.card_pay input{
+
+.card_pay input, .pix_box input {
     width: 100%;
     padding: 1rem 2rem;
     border-radius: 5px;
@@ -221,78 +234,66 @@ body{
     box-sizing: border-box;
     color: black;
 }
-.card_pay label{
+
+.card_pay label, .pix_box label, .boleto label {
     font-size: 2rem;
     font-weight: 600;
     font-family: sans-serif;
     margin-right: auto;
     text-transform: uppercase;
 }
-.card_pay .comfirm{
+
+.card_pay .comfirm, .pix_box .comfirm {
     background-color: #aa0404;
     color: white;
     font-weight: bold;
     transition: 0.3s ease-in-out;
 }
-.card_pay .comfirm:hover{
+
+.card_pay .comfirm:hover, .pix_box .comfirm:hover {
     background-color: #4d0202;
 }
-.parcelas{
-    padding: 1rem 2rem;
-}
-.card_pay > div{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
 
-.pix_box{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    margin:auto;
-    padding: 1.5rem;
-}
-.pix_box input{
-    width: 100%;
+.parcelas {
     padding: 1rem 2rem;
+    width: 100%;
     border-radius: 5px;
-    text-transform: capitalize;
     font-size: 1.5rem;
     background-color: #eeeeee;
-    box-sizing: border-box;
-    color: black;
 }
-.pix_box .comfirm{
-    background-color: #aa0404;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s ease-in-out;
-}
-.pix_box .comfirm:hover{
-    background-color: #4d0202;
-}
-.pix_box label{
-    font-size: 2rem;
-    font-weight: 600;
-    font-family: sans-serif;
-    margin-right: auto;
-    text-transform: uppercase;
-}
-.pix_box > div{
+
+.card_pay > div, .pix_box > div, .boleto > div {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.forms{
+.forms {
     display: flex;
     width: 60%;
     margin: auto;
+    gap: 2rem;
+    align-items: start;
 }
 
-.end{
+
+.order-confirmation {
+    text-align: center;
+    padding: 2rem;
+}
+
+.order-confirmation h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.order-confirmation p {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.end {
     display: flex;
     justify-content: space-evenly;
     margin-top: 10rem;
@@ -301,10 +302,35 @@ body{
     font-size: 3rem;
     color: white;
 }
-.media{
+
+.media {
     gap: 2rem;
     display: flex;
 }
-.media a{
+
+.media a {
     color: white;
 }
+
+.total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #4d0202;
+    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+    padding: 2rem 4rem;
+    margin: 3rem auto;
+    border: 2px solid #4d0202;
+    border-radius: 1.5rem;
+    width: fit-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Cinzel Decorative', serif;
+    animation: pulseTotal 2s infinite ease-in-out;
+}
+
+
+

@@ -1,158 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./imagens/168570.png">
+    <title>Carrinho - WineHub</title>
     <link rel="stylesheet" href="carrinho.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Indie+Flower&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <title>compras</title>
-
 </head>
 <body>
+    <header class="center">
+        <img src="./imagens/vinho_fundo.png" alt="Logo WineHub">
+    </header>
 
-     <header class="center">
-        <div class="title">
-          <img src="./imagens/vinho_fundo.png" alt="">
+    <main>
+        <section class="container">
+            <h1>Meu Carrinho</h1>
+        </section>
+
+        <div class="total">
+            <p></p>
         </div>
-     </header> 
 
-   <div class="container">
-     <h1>Meu Carrinho</h1>
-   </div>
+        <div class="buttons">
+            <button class="clean">Limpar Carrinho</button>
+            <a href="index.html" class="back">Voltar a comprar</a>
+        </div>
 
-   <div class="buttons">
-     <button class="clean" onclick="localStorage.removeItem('carrinho'); location.reload();">
-        Limpar Carrinho
-     </button>
-     <a class="back" href="index.html">voltar a comprar</a>
-   </div>
-    
+        <section class="forms">
+            <div class="user-form">
+                <h2 class="checkout">Preencha seus dados</h2>
+                <form class="user">
+                    <div>
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" id="name" placeholder="Seu nome">
+                    </div>
+                    <div class="number">
+                        <div>
+                            <label for="city">Cidade:</label>
+                            <input type="text" name="city" id="city" placeholder="Sua cidade">
+                        </div>
+                        <div>
+                            <label for="number">Nº:</label>
+                            <input type="text" name="number" id="number" placeholder="Número">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="Seu email">
+                    </div>
+                    <input type="button" value="Confirmar" class="comfirm">
+                </form>
+            </div>
 
+            <div class="user-form">
+                <h2 class="checkout">Método de Pagamento</h2>
+                <div class="pay">
+                    <div class="pay_input">
+                        <label><input type="radio" name="pay" value="cartao" checked> Cartão</label>
+                        <label><input type="radio" name="pay" value="pix"> Pix</label>
+                        <label><input type="radio" name="pay" value="boleto"> Boleto</label>
+                    </div>
 
-   <div class="forms">
+                    <div id="card-pay" class="card_pay">
+                        <div>
+                            <label for="cartao-namber">Número do cartão:</label>
+                            <input type="text" id="cartao-namber" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                        <div>
+                            <label for="name-card">Nome:</label>
+                            <input type="text" id="name-card" placeholder="Nome no cartão" required>
+                        </div>
+                        <div>
+                            <label for="cvc">CVC:</label>
+                            <input type="text" id="cvc" placeholder="123" required>
+                        </div>
+                        <div>
+                            <label>Parcelamento:</label>
+                            <select class="parcelas">
+                                <option>1x sem juros</option>
+                                <option>2x sem juros</option>
+                                <option>3x sem juros</option>
+                                <option>4x sem juros</option>
+                                <option>5x sem juros</option>
+                                <option>6x sem juros</option>
+                                <option>7x sem juros</option>
+                                <option>8x sem juros</option>
+                                <option>9x sem juros</option>
+                                <option>10x sem juros</option>
+                                <option>11x sem juros</option>
+                                <option>12x sem juros</option>
+                            </select>
+                        </div>
+                    </div>
 
-  <form class="user-form">
-  <fieldset class="user">
-    <legend class="checkout">preencha seus dados</legend>
+                    <div class="pix hidden">
+                        <div class="pix_box">
+                            <label>Chave Pix:</label>
+                            <input type="text" placeholder="Chave Pix (CPF, e-mail ou telefone)" value="122.336.289-26">
+                        </div>
+                    </div>
 
-    <div>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" placeholder="insira seu nome" required>
-    </div>
+                    <div class="boleto hidden">
+                        <div class="pix_box">
+                            <label>Informações do Boleto:</label>
+                            <p>Boleto será gerado após a confirmação do pedido.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-
-    <div class="number">
-      <div>
-        <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" name="cidade" placeholder="insira sua cidade" required>
-      </div>
-      <div>
-        <label for="numero">Nº:</label>
-        <input type="number" id="numero" name="numero" placeholder="Nº" required>
-      </div>
-    </div>
-
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="insira seu email" required>
-    </div>
-
-    <input type="submit" class="comfirm" value="confirmar">
-  </fieldset>
-</form>
-
-
-<form action="" method="post" class="user-form">
-  <fieldset class="pay">
-    <legend class="checkout">metodo de pagamento</legend>
-
-    <div class="pay_input">
-    <label>
-      <input type="radio" name="pay" value="cartao" checked>cartão
-    </label>
-    <label>
-      <input type="radio" name="pay" value="pix" checked>pix
-    </label>
-    </div>
-  </fieldset>
-
-   <div class="pix">
-
-    <div class="pix_box">
-
-    <div>
-    <label for="pix">chave pix</label>
-    <input type="text" placeholder="82.779.737/0001-19" readonly>
-    </div>
-
-    <input type="submit" value="confirmar" class="comfirm">
-    </div>
-   </div>
-
-
-   <div id="card-pay" class="hidden">
-
-    <div class="card_pay">
-     
-    <div>
-    <label for="number">Número do cartão:</label>
-    <input type="text" id="numero" name="card-number">
-    </div>  
-
-    <div>
-    <label for="name">nome</label>
-    <input type="text" id="name" name="card-name">
-    </div>  
-
-    <div>  
-    <label for="cvc">cvc</label>
-    <input type="number" id="cvc" name="card-cvc" maxlength="3">
-    </div>  
-
-    <label for="parcelas">Parcelamento:</label>
-    <select id="parcelas" name="parcelas" class="parcelas">
-     <option value="1x">1x sem juros</option>
-     <option value="2x">2x sem juros</option>
-     <option value="3x">3x sem juros</option>
-     <option value="4x">4x sem juros</option>
-     <option value="5x">5x sem juros</option>
-     <option value="6x">6x sem juros</option>
-     <option value="7x">7x sem juros</option>
-     <option value="8x">8x sem juros</option>
-     <option value="9x">9x sem juros</option>
-     <option value="10x">10x sem juros</option>
-     <option value="11x">11x sem juros</option>
-     <option value="12x">12x sem juros</option>
-    </select>
-
-    <input type="submit" value="confirmar" class="comfirm">
-    </div>
-  </div>
-
-</form>
-
-</div>
-
-
-     <footer>
-      <div class="end">
-        <p>&copy;winehub</p>
+    <footer class="end">
+        <p>©winehub</p>
         <div class="media">
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
         </div>
-      </div>
-     </footer>
+    </footer>
 
-
-   
-
-
+    <script src="index.js"></script>
     <script src="carrinho.js"></script>
 </body>
 </html>
