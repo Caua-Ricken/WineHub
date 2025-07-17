@@ -306,6 +306,7 @@ body {
 .media {
     gap: 2rem;
     display: flex;
+    align-items: center;
 }
 
 .media a {
