@@ -21,7 +21,7 @@ Desenvolvido com **HTML**, **CSS** e **JavaScript**, o projeto oferece uma exper
 ## 🖥️ Demonstração Online
 
 Experimente a navegação e explore os vinhos:
-🍷 [Veja o WineHub ao vivo](https://caua-ricken.github.io/WineHub/)
+👉 [WineHub - ao vivo](https://caua-ricken.github.io/WineHub/)
 
 ---
 
