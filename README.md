@@ -20,7 +20,7 @@ Desenvolvido com **HTML**, **CSS** e **JavaScript**, o projeto oferece uma exper
 
 ## 🖥️ Demonstração Online
 
-Experimente a navegação e explore os vinhos:
+Você pode acessar o projeto ao vivo neste link: 
 👉 [WineHub - ao vivo](https://caua-ricken.github.io/WineHub/)
 
 ---
