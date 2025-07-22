@@ -21,7 +21,7 @@ Desenvolvido com **HTML**, **CSS** e **JavaScript**, o projeto oferece uma exper
 ## 🖥️ Demonstração Online
 
 Você pode acessar o projeto ao vivo neste link:  
-👉 [WineHub - Live Demo](https://caua-ricken.github.io/WineHub/)
+👉 [WineHub - Ao Vivo](https://caua-ricken.github.io/WineHub/)
 
 ---
 
