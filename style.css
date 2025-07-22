@@ -352,7 +352,7 @@ body {
 
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     html {
         font-size: 55%;
         /* ajusta base de tamanho */
@@ -438,7 +438,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     html {
         font-size: 50%;
     }
