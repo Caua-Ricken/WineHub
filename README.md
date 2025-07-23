@@ -38,4 +38,4 @@ Você pode acessar o projeto ao vivo neste link:
 
 1. Clone o repositório:  
    ```bash
-   git clone https://github.com/Dev-Caua-Ricken/WineHub.git
+   git clone https://github.com/Caua-Ricken/WineHub.git
