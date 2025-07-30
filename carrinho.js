@@ -22,7 +22,8 @@ function formatOrderAsText(orderNumber, carrinho, customerInfo, paymentMethod, t
     orderText += `Nome: ${customerInfo.name}\n`;
     orderText += `Cidade: ${customerInfo.city}\n`;
     orderText += `Número: ${customerInfo.number}\n`;
-    orderText += `Email: ${customerInfo.email}\n\n`;
+    orderText += `Email: ${customerInfo.email}\n`;
+    orderText += `Local de entrega: ${customerInfo.endereco}\n\n`;
 
     orderText += `=== Itens do Carrinho ===\n`;
     carrinho.forEach(item => {
@@ -74,30 +75,34 @@ function displayOrderConfirmation(orderNumber, carrinho, paymentMethod, customer
     saveOrderAsTextFile(orderNumber, orderText);
 
     let qrCodeHTML = '';
-    if (paymentMethod === 'pix') {
-        const pixPayload = generatePixPayload('122.336.289-26', orderNumber, total);
-        qrCodeHTML = `
-            <div id="pix-qrcode" style="margin: 2rem auto; text-align: center;"></div>
-            <script>
-                new QRCode(document.getElementById("pix-qrcode"), {
-                    text: "${pixPayload}",
-                    width: 200,
-                    height: 200
-                });
-            </script>
-        `;
-    } else if (paymentMethod === 'boleto') {
-        const boletoBarcode = generateBoletoBarcode(orderNumber);
-        qrCodeHTML = `
-            <div id="boleto-qrcode" style="margin: 2rem auto; text-align: center;"></div>
-            <script>
-                new QRCode(document.getElementById("boleto-qrcode"), {
-                    text: "${boletoBarcode}",
-                    width: 200,
-                    height: 200
-                });
-            </script>
-        `;
+    if (typeof QRCode !== 'undefined') {
+        if (paymentMethod === 'pix') {
+            const pixPayload = generatePixPayload('122.336.289-26', orderNumber, total);
+            qrCodeHTML = `
+                <div id="pix-qrcode" style="margin: 2rem auto; text-align: center;"></div>
+                <script>
+                    new QRCode(document.getElementById("pix-qrcode"), {
+                        text: "${pixPayload}",
+                        width: 200,
+                        height: 200
+                    });
+                </script>
+            `;
+        } else if (paymentMethod === 'boleto') {
+            const boletoBarcode = generateBoletoBarcode(orderNumber);
+            qrCodeHTML = `
+                <div id="boleto-qrcode" style="margin: 2rem auto; text-align: center;"></div>
+                <script>
+                    new QRCode(document.getElementById("boleto-qrcode"), {
+                        text: "${boletoBarcode}",
+                        width: 200,
+                        height: 200
+                    });
+                </script>
+            `;
+        }
+    } else {
+        console.warn("QRCode library not loaded. QR codes will not be displayed.");
     }
 
     const confirmationHTML = `
@@ -132,10 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
             R$ 0,00
         `;
         }
-
         return;
     }
-
 
     let totalCompra = 0;
 
@@ -174,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardPay = document.getElementById('card-pay');
     const pixDiv = document.querySelector('.pix');
     const boletoDiv = document.querySelector('.boleto');
-    const confirmButton = document.querySelector('.user .comfirm');
+    const confirmButton = document.querySelector('.comfirm'); 
 
     function togglePaymentFields() {
         const selected = document.querySelector('input[name="pay"]:checked').value;
@@ -194,27 +197,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     confirmButton.addEventListener('click', (e) => {
         e.preventDefault();
-        const name = document.querySelector('input[name="name"]').value;
-        const city = document.querySelector('input[name="city"]').value;
-        const number = document.querySelector('input[name="number"]').value;
-        const email = document.querySelector('input[name="email"]').value;
-        const paymentMethod = document.querySelector('input[name="pay"]:checked').value;
 
-        if (!name || !city || !number || !email) {
-            alert('Por favor, preencha todos os campos de endereço e e-mail.');
-            return;
+        const userData = JSON.parse(localStorage.getItem("userData") || "{}");
+        const { name, city, number, email, endereco } = userData;
+
+        if (!name || !city || !number || !email || !endereco) {
+            alert("Por favor, preencha todos os dados de cadastro em 'Cadastro de Usuário' antes de finalizar a compra.");
+            window.location.href = "user.html"; 
+            return; 
         }
 
-        if (paymentMethod === 'pix') {
-            const pixKey = document.querySelector('.pix_box input').value;
-            if (!pixKey) {
-                alert('Por favor, insira a chave Pix.');
-                return;
-            }
-        } else if (paymentMethod === 'cartao') {
-            const cardNumber = document.querySelector('.card_pay input[placeholder="1234 5678 9012 3456"]').value;
-            const cardName = document.querySelector('.card_pay input[placeholder="Nome no cartão"]').value;
-            const cvc = document.querySelector('.card_pay input[placeholder="123"]').value;
+        const paymentMethod = document.querySelector('input[name="pay"]:checked').value;
+
+        if (paymentMethod === 'cartao') {
+            const cardNumber = document.getElementById('cartao-namber').value;
+            const cardName = document.getElementById('name-card').value;
+            const cvc = document.getElementById('cvc').value;
             if (!cardNumber || !cardName || !cvc) {
                 alert('Por favor, preencha todos os campos do cartão.');
                 return;
@@ -222,12 +220,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const orderNumber = generateOrderNumber();
-        const customerInfo = { name, city, number, email };
+        const customerInfo = { name, city, number, email, endereco }; 
 
-        container.innerHTML = '';
+        container.innerHTML = ''; 
         displayOrderConfirmation(orderNumber, carrinho, paymentMethod, customerInfo);
 
-        localStorage.removeItem('carrinho');
-        atualizarCarrinhoTotal(); 
+        localStorage.removeItem('carrinho'); 
     });
 });

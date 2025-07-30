@@ -17,7 +17,7 @@ body {
 .center {
     background-color: rgb(238, 238, 238);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 0.1rem 5rem;
     flex-wrap: wrap;
@@ -33,6 +33,11 @@ body {
     height: 11rem;
 }
 
+.center .img-contato {
+    width: 9rem;
+    height: 9rem;
+}
+
 /* Products */
 .container {
     display: flex;
@@ -43,7 +48,7 @@ body {
     margin: 5rem auto auto;
     border-radius: 1rem;
     padding: 1rem 0;
-    width: 70%;
+    width: 100%;
     border: 2px solid black;
 }
 
@@ -92,6 +97,17 @@ body {
     color: #4d0202;
 }
 
+.card-item-page {
+    border: 1px solid #4d0202;
+    box-shadow: rgba(78, 7, 7, 0.6);
+}
+
+.forms {
+    display: flex;
+}
+
+
+
 /* Buttons */
 .buttons {
     display: flex;
@@ -101,7 +117,8 @@ body {
     align-items: center;
 }
 
-.clean, .back {
+.clean,
+.back {
     font-size: 2rem;
     padding: 1rem 3rem;
     border: none;
@@ -117,10 +134,59 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.clean:hover, .back:hover {
+.clean:hover,
+.back:hover {
     background-color: #7f0c0c;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 1rem rgba(78, 7, 7, 0.8);
 }
+
+.message {
+    position: relative;
+    display: block;
+}
+
+.message-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-top: 6px;
+    z-index: 1;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    text-transform: capitalize;
+}
+
+.message-text::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #333;
+}
+
+.message:hover .message-text {
+    display: block;
+    opacity: 1;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: start;
+    flex-wrap: wrap;
+}
+
 
 /* User Form */
 .user-form {
@@ -131,6 +197,14 @@ body {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.user-form-box {
+    width: 35rem;
+}
+
+.box-ext {
+    width: 60%;
 }
 
 .user {
@@ -157,7 +231,7 @@ body {
     margin-right: auto;
 }
 
-.user > div {
+.user>div {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -184,15 +258,31 @@ body {
     color: black;
 }
 
-.user .comfirm {
+.text-boleto {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.box-button {
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.comfirm {
     background-color: #aa0404;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    border: none;
+    width: 100%;
     color: white;
     font-weight: bold;
     transition: 0.3s ease-in-out;
 }
 
-.user .comfirm:hover {
+.comfirm:hover {
     background-color: #4d0202;
+    box-shadow: 0 0 1rem rgba(78, 7, 7, 0.6);
 }
 
 /* Payment */
@@ -213,7 +303,9 @@ body {
     display: none;
 }
 
-.card_pay, .pix_box, .boleto {
+.card_pay,
+.pix_box,
+.boleto {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -224,7 +316,8 @@ body {
     border-style: none;
 }
 
-.card_pay input, .pix_box input {
+.card_pay input,
+.pix_box input {
     width: 100%;
     padding: 1rem 2rem;
     border-radius: 5px;
@@ -235,7 +328,9 @@ body {
     color: black;
 }
 
-.card_pay label, .pix_box label, .boleto label {
+.card_pay label,
+.pix_box label,
+.boleto label {
     font-size: 2rem;
     font-weight: 600;
     font-family: sans-serif;
@@ -243,14 +338,16 @@ body {
     text-transform: uppercase;
 }
 
-.card_pay .comfirm, .pix_box .comfirm {
+.card_pay .comfirm,
+.pix_box .comfirm {
     background-color: #aa0404;
     color: white;
     font-weight: bold;
     transition: 0.3s ease-in-out;
 }
 
-.card_pay .comfirm:hover, .pix_box .comfirm:hover {
+.card_pay .comfirm:hover,
+.pix_box .comfirm:hover {
     background-color: #4d0202;
 }
 
@@ -262,7 +359,9 @@ body {
     background-color: #eeeeee;
 }
 
-.card_pay > div, .pix_box > div, .boleto > div {
+.card_pay>div,
+.pix_box>div,
+.boleto>div {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -335,42 +434,38 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  .carrinho {
-    width: 100vw; /* Ocupa a tela inteira no mobile */
-    right: 0;
-    padding: 1rem;
-    font-size: 1rem;
-  }
+    .carrinho {
+        width: 100vw;
+        right: 0;
+        padding: 1rem;
+        font-size: 1rem;
+    }
 
-  .carrinho h2 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
+    .carrinho h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
 
-  .item-carrinho {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
+    .item-carrinho {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
 
-  .item-carrinho img {
-    width: 100px;
-    height: auto;
-  }
+    .item-carrinho img {
+        width: 100px;
+        height: auto;
+    }
 
-  .carrinho-total,
-  .botao-finalizar {
-    font-size: 1.2rem;
-    width: 100%;
-    margin-top: 1rem;
-  }
+    .carrinho-total,
+    .botao-finalizar {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
 
-  .botao-remover {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
+    .botao-remover {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
 }
-
-
-
-

@@ -31,6 +31,7 @@ function alterarQtd(botao, valor) {
   if (atual < 0) atual = 0;
   input.value = atual;
 
+
   atualizarCarrinhoTotal();
 }
 
@@ -111,9 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const nomeProduto = produto.querySelector(".text div").textContent.trim().toLowerCase();
       if (nomeProduto === item.nome.trim().toLowerCase()) {
         produto.querySelector(".quantidade input").value = item.quantidade;
+        produto.classList.add("no-carrinho");
       }
     });
   });
   atualizarCarrinhoTotal();
 });
-

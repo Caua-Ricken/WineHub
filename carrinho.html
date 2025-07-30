@@ -12,9 +12,14 @@
 <body>
     <header class="center">
         <img src="./imagens/vinho_fundo.png" alt="Logo WineHub">
+        <div class="message">
+        <a href="user.html"><img src="./imagens/user.webp" alt="" class="img-contato"></a>
+        <span class="message-text">cadastro de usuário</span>
+        </div>
     </header>
 
     <main>
+        <div class="box-ext">  
         <section class="container">
             <h1>Meu Carrinho</h1>
         </section>
@@ -27,33 +32,10 @@
             <button class="clean">Limpar Carrinho</button>
             <a href="index.html" class="back">Voltar a comprar</a>
         </div>
+        </div>
 
-        <section class="forms">
-            <div class="user-form">
-                <h2 class="checkout">Preencha seus dados</h2>
-                <form class="user">
-                    <div>
-                        <label for="name">Nome:</label>
-                        <input type="text" name="name" id="name" placeholder="Seu nome">
-                    </div>
-                    <div class="number">
-                        <div>
-                            <label for="city">Cidade:</label>
-                            <input type="text" name="city" id="city" placeholder="Sua cidade">
-                        </div>
-                        <div>
-                            <label for="number">Nº:</label>
-                            <input type="text" name="number" id="number" placeholder="Número">
-                        </div>
-                    </div>
-                    <div>
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" placeholder="Seu email">
-                    </div>
-                    <input type="button" value="Confirmar" class="comfirm">
-                </form>
-            </div>
-
+        
+        <div class="user-form-box">
             <div class="user-form">
                 <h2 class="checkout">Método de Pagamento</h2>
                 <div class="pay">
@@ -105,12 +87,15 @@
                     <div class="boleto hidden">
                         <div class="pix_box">
                             <label>Informações do Boleto:</label>
-                            <p>Boleto será gerado após a confirmação do pedido.</p>
+                            <p class="text-boleto">Boleto será gerado após a confirmação do pedido.</p>
                         </div>
+                    </div>
+                    <div class="box-button">
+                    <input type="button" value="Confirmar" class="comfirm">
                     </div>
                 </div>
             </div>
-        </section>
+            </div>
     </main>
 
     <footer class="end">
@@ -124,5 +109,6 @@
     
     <script src="index.js"></script>
     <script src="carrinho.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode.js/1.0.0/qrcode.min.js"></script>
 </body>
 </html>

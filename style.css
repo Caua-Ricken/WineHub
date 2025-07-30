@@ -65,16 +65,37 @@ body {
     font-size: 3rem;
     color: black;
     text-transform: capitalize;
-
     border: 2px solid transparent;
     padding: 1rem 3rem;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.nav a:hover {
-    border-color: black;
-    border-radius: 9px;
+.nav a::before,
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3s ease;
+  border-radius: 9px;
 }
 
+.nav a::before {
+  top: 0;
+  left: 0;
+}
+
+.nav a::after {
+  bottom: 0;
+  right: 0;
+}
+
+.nav a:hover::before,
+.nav a:hover::after {
+  width: 100%;
+}
 
 
 /*plano fundo */
@@ -156,6 +177,10 @@ body {
     width: 100%;
 }
 
+.no-carrinho {
+  border: 3px solid #4d0202;
+  box-shadow: 0 0 1rem rgba(92, 26, 27, 0.7);
+}
 
 
 /*preço*/
@@ -355,7 +380,6 @@ body {
 @media screen and (max-width: 768px) {
     html {
         font-size: 55%;
-        /* ajusta base de tamanho */
     }
 
     .center {

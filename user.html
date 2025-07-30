@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="./imagens/168570.png">
+    <link rel="stylesheet" href="user.css">
+    <title>Cadastro</title>
+</head>
+<body>
+
+    <header class="center">
+        <img src="./imagens/vinho_fundo.png" alt="Logo WineHub">
+    </header>
+
+    <section class="forms">
+         <div class="user-form">
+                <h2 class="checkout">Preencha seus dados</h2>
+                <form class="user">
+                    <div>
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" id="name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="number">
+                        <div>
+                            <label for="city">Cidade:</label>
+                            <input type="text" name="city" id="city" placeholder="Sua cidade" required>
+                        </div>
+                        <div>
+                            <label for="number">Nº:</label>
+                            <input type="text" name="number" id="number" placeholder="Número" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="Seu email" required>
+                    </div>
+                    <div>
+                        <label for="entrega">Endereço de Entrega:</label>
+                        <textarea name="entrega" id="entrega" placeholder="Endereço de Entrega:" class="textarea" rows="3" required></textarea>
+                    </div>
+                    <input type="submit" value="Confirmar" class="comfirm">
+                </form>
+            </div>
+    </section>
+
+    <footer>
+      <div class="end">
+        <p>&copy;winehub</p>
+        <div class="media">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+     </footer>
+
+     <script src="user.js"></script>
+    
+</body>
+</html>

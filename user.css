@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ccc;
+}
+
+/* Header */
+.center {
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem 5rem;
+    flex-wrap: wrap;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.center img {
+    width: 11rem;
+    height: 11rem;
+}
+
+/*formulario*/
+.forms{
+    padding: 6rem 2rem;
+    height: 100vh;
+}
+
+.user-form {
+    border: 2px solid black;
+    margin: 5rem auto;
+    width: 32rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 1.5rem;
+    border-style: none;
+}
+
+.checkout {
+    font-size: 3rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.user label {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin-right: auto;
+}
+
+.user > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.number {
+    display: flex;
+    gap: 1rem;
+}
+
+.number input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user input {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    background-color: #eeeeee;
+    box-sizing: border-box;
+    color: black;
+}
+
+.user .comfirm {
+    background-color: #aa0404;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.user .comfirm:hover {
+    background-color: #4d0202;
+}
+
+.textarea{
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    background-color: #eeeeee;
+    box-sizing: border-box;
+    color: black;
+}
+
+/*footer*/
+.end {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.6rem;
+    background-color: hsla(0, 2%, 13%, 0.7);
+    font-size: 3rem;
+    color: white;
+}
+
+.media {
+    gap: 2rem;
+    display: flex;
+}
+
+.media a {
+    color: white;
+}
